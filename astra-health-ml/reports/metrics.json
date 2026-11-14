@@ -1,0 +1,170 @@
+{
+  "dataset": {
+    "rows": 720,
+    "crew": 4,
+    "class_counts": {
+      "NOMINAL": 649,
+      "WARNING": 63,
+      "CRITICAL": 8
+    }
+  },
+  "risk_today": {
+    "best_model": "hist_gb",
+    "all_models": {
+      "logreg": {
+        "macro_f1": 0.8711551381462922,
+        "recall_warning_or_critical": 0.8732394366197183,
+        "recall_critical": 0.875
+      },
+      "random_forest": {
+        "macro_f1": 0.8651607651607652,
+        "recall_warning_or_critical": 0.9154929577464789,
+        "recall_critical": 0.625
+      },
+      "hist_gb": {
+        "macro_f1": 0.8859962522032472,
+        "recall_warning_or_critical": 0.9577464788732394,
+        "recall_critical": 0.75
+      }
+    },
+    "confusion_matrix(rows=actual,cols=pred)": [
+      [
+        645,
+        4,
+        0
+      ],
+      [
+        3,
+        58,
+        2
+      ],
+      [
+        0,
+        2,
+        6
+      ]
+    ],
+    "report": {
+      "NOMINAL": {
+        "precision": 0.9953703703703703,
+        "recall": 0.9938366718027735,
+        "f1-score": 0.9946029298380878,
+        "support": 649.0
+      },
+      "WARNING": {
+        "precision": 0.90625,
+        "recall": 0.9206349206349206,
+        "f1-score": 0.9133858267716536,
+        "support": 63.0
+      },
+      "CRITICAL": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1-score": 0.75,
+        "support": 8.0
+      },
+      "accuracy": 0.9847222222222223,
+      "macro avg": {
+        "precision": 0.8838734567901234,
+        "recall": 0.8881571974792314,
+        "f1-score": 0.8859962522032472,
+        "support": 720.0
+      },
+      "weighted avg": {
+        "precision": 0.9848460005144032,
+        "recall": 0.9847222222222223,
+        "f1-score": 0.9847786229882405,
+        "support": 720.0
+      }
+    },
+    "top_features": {
+      "sleep_z_score": 0.2485,
+      "subjective_fatigue_1_10_r3": 0.2041,
+      "exercise_duration_mins": 0.0929,
+      "workload_score_1_10": 0.0897,
+      "subjective_stress_1_10_r7": 0.047,
+      "d_sleep_vs_base": 0.0449,
+      "subjective_fatigue_1_10": 0.0443,
+      "hrv_rmssd_ms": 0.0443,
+      "subjective_stress_1_10": 0.0443,
+      "cumulative_sleep_debt_hrs": 0.0419,
+      "d_hr_vs_base": 0.0413,
+      "resting_hr_bpm_chg1": 0.0365
+    }
+  },
+  "risk_next": {
+    "best_model": "logreg",
+    "all_models": {
+      "logreg": {
+        "roc_auc": 0.6938312042799433,
+        "avg_precision": 0.30674121965445994,
+        "f1@0.5": 0.311284046692607
+      },
+      "random_forest": {
+        "roc_auc": 0.7149470466208101,
+        "avg_precision": 0.3018672873974774,
+        "f1@0.5": 0.16666666666666666
+      },
+      "hist_gb": {
+        "roc_auc": 0.6934818211595152,
+        "avg_precision": 0.2757733143437435,
+        "f1@0.5": 0.23214285714285715
+      }
+    },
+    "alert_threshold": 0.14999999999999997,
+    "confusion_matrix": [
+      [
+        230,
+        415
+      ],
+      [
+        14,
+        57
+      ]
+    ],
+    "report": {
+      "0": {
+        "precision": 0.9426229508196722,
+        "recall": 0.35658914728682173,
+        "f1-score": 0.5174353205849269,
+        "support": 645.0
+      },
+      "1": {
+        "precision": 0.12076271186440678,
+        "recall": 0.8028169014084507,
+        "f1-score": 0.20994475138121546,
+        "support": 71.0
+      },
+      "accuracy": 0.40083798882681565,
+      "macro avg": {
+        "precision": 0.5316928313420395,
+        "recall": 0.5797030243476362,
+        "f1-score": 0.3636900359830712,
+        "support": 716.0
+      },
+      "weighted avg": {
+        "precision": 0.8611256366215941,
+        "recall": 0.40083798882681565,
+        "f1-score": 0.4869439373258996,
+        "support": 716.0
+      }
+    }
+  },
+  "readiness": {
+    "best_model": "ridge",
+    "all_models": {
+      "ridge": {
+        "mae": 0.4184919164524849,
+        "r2": 0.9937931720222677
+      },
+      "random_forest": {
+        "mae": 0.7484980053183666,
+        "r2": 0.9624035081130362
+      },
+      "hist_gb": {
+        "mae": 0.9191527212396327,
+        "r2": 0.9343244566937844
+      }
+    }
+  }
+}
